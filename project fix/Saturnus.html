@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Saturnus</title>
+  <link rel="stylesheet" href="planetin.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="home.html" class="navbar-item">HOME</a>
+        </div>
+        <div class="navbar-right">
+          <a href="planet.html" class="navbar-item">PLANET</a>
+          <a href="Revolusi.html" class="navbar-item">REVOLUSI</a>
+          <a href="Rotasi.html" class="navbar-item">ROTASI</a>
+          <a href="funfact.html" class="navbar-item">FUN FACT</a>
+          <a href="Kuis.html" class="navbar-item">QUIZ</a>
+          <a href="#" class="navbar-item">TENTANG</a>
+        </div>
+    </nav>
+</header>
+  <div class="frame">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <script>
+      var scene = new THREE.Scene();
+      var camera = new THREE.PerspectiveCamera(30,window.innerWidth / window.innerHeight,0.8,300);
+
+      var renderer = new THREE.WebGLRenderer();
+      renderer.setSize(window.innerWidth * 0.5 , 350);
+      document.querySelector('.frame').appendChild(renderer.domElement);
+
+      var geometry = new THREE.SphereGeometry(5, 32, 64);
+      var material = new THREE.MeshBasicMaterial({
+        map: new THREE.TextureLoader().load(
+          "https://upload.wikimedia.org/wikipedia/commons/1/1e/Solarsystemscope_texture_8k_saturn.jpg"
+        ),
+      });
+      var saturnus = new THREE.Mesh(geometry, material);
+      scene.add(saturnus);
+
+      var ringGeometry = new THREE.RingGeometry(6, 9, 64);
+      var ringMaterial = new THREE.MeshBasicMaterial({
+        map: new THREE.TextureLoader().load(
+          "https://upload.wikimedia.org/wikipedia/commons/1/1e/Solarsystemscope_texture_8k_saturn.jpg"
+        ),
+        side: THREE.DoubleSide,
+      });
+      var ring = new THREE.Mesh(ringGeometry, ringMaterial);
+      ring.rotation.x = Math.PI / 2;
+      ring.position.set(0, 0, 0); // Posisikan cincin di tengah planet
+      saturnus.add(ring);
+
+      camera.position.z = 30;
+
+      var animate = function () {
+        requestAnimationFrame(animate);
+        ringMaterial.map.offset.x += 0.1;
+        ringMaterial.map.repeat.set(1, 1);
+        saturnus.rotation.y += 0.01;
+        ring.rotation.x += 0.01;
+
+        renderer.render(scene, camera);
+      };
+
+      animate();
+    </script>
+
+  </div>
+  <div class="frame2">
+    <p class="title">SATURNUS</p>
+    <div class="subtitle">
+        <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Saturnus adalah planet keenam dari Matahari dan merupakan planet terbesar kedua di Tata Surya setelah Jupiter. Saturnus juga merupakan sebuah raksasa gas yang memiliki perak rata-rata sekitar 9 kali radius rata-rata Bumi. Massa jenis rata-rata Saturnus hanya 1/8 massa jenis rata-rata Bumi, tetapi dengan volume yang lebih besar dari Bumi, massa Saturnus tercatat 95 kali massa Bumi.</p>
+        <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Saturnus terkenal dengan sistem cincinnya yang unik, yang sebagian besar terdiri dari partikel-partikel es dengan sedikit puing-puing batu dan debu. Saturnus adalah satu-satunya planet di Tata Surya yang massa jenisnya lebih rendah dari massa jenis air (sekitar 30% lebih rendah). Walaupun memiliki inti planet yang jauh lebih padat dari air, planet ini hanya memiliki massa jenis relatif 0,69 g/cm3 karena atmosfernya yang mengandung gas. Massa Jupiter 318 kali massa Bumi, sedangkan massa Saturnus 95 kali massa Bumi. Kedua planet ini mencakup 92% total massa seluruh planet di Tata Surya.</p>
+    </div>
+  </div>
+</body>
+</html>

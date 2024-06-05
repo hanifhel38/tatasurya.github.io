@@ -1,0 +1,80 @@
+/* ex1.css */
+
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+  }
+  
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  color: white;
+ 
+}
+
+.navbar-item {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  margin-right: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-item:hover{
+  background-color: #615EFC;
+  border-radius: 15px;
+}
+  
+  .frame {
+   top: 100px;
+   display: grid;
+   justify-content: center;
+   width: 100%;
+   height: 500px;
+   position: relative;
+  }
+  
+  
+  .frame p {
+    margin: 0;
+  }
+  
+  canvas {
+    border: 5px solid transparent;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .frame2 {
+    width: 100%; /* Memberikan lebar .frame2 */
+    display: grid;
+  }
+
+.title {
+  height: auto;
+  display: grid;
+  margin-bottom: 0;
+  color: #fff;
+  font-size: 3em;
+  justify-content: center;
+  position: relative;
+}
+.subtitle{
+  margin-top: 0;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.subtitle p{
+  margin-top: 0;
+  font-family: sans-serif;
+  color: #fff;
+  font-size: 1.8em;
+  text-align: justify;
+}

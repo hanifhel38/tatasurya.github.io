@@ -1,0 +1,331 @@
+body {
+    background: #000;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    color: white;
+   
+  }
+  
+  .navbar-item {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    margin-right: 10px;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .navbar-item:hover{
+    background-color: #615EFC;
+    border-radius: 15px;
+  }
+.container {
+    display: grid;
+    height: 850px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.solar-system {
+    height: 850px;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.solar-system::after {
+    
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+    color: #efefef;
+    font-family: sans
+}
+
+.info {
+    background: #111;
+}
+
+.circle {
+    border-radius: 50%;
+    position: absolute;
+}
+
+.sun {
+    background-image: url(aset/sun.png);
+    background-size: 120% 120%;
+    width: 100px;
+    height: 100px; 
+    animation: pole-rotate 30s infinite linear;
+    box-shadow: 0px 0px 20px #fc9328
+}
+
+.mercury {
+    background: url(aset/mercury.png);
+    background-size: 100% 100%;
+    width: 20px;
+    height: 20px; 
+    animation: mercury-rotate 6s infinite linear;
+}
+
+@keyframes pole-rotate {
+    0% {
+        background-position: center center;
+    }
+    50% {
+        background-position: 50% 40%;
+    }
+    to {
+        transform: rotate(360deg);
+        background-position: center center;
+    }
+}
+
+@keyframes mercury-rotate {
+    0% {
+        transform: rotateZ(0) translateX(-70px);
+    }
+    to {
+        transform: rotateZ(360deg) translateX(-70px) ;
+    }
+}
+
+.venus {
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/PIA00271_Venus_%28Computer_Simulated_Global_View_of_the_Northern_Hemisphere%29.jpg/600px-PIA00271_Venus_%28Computer_Simulated_Global_View_of_the_Northern_Hemisphere%29.jpg') no-repeat;
+    width: 40px;
+    height: 40px; 
+    background-size: 100% 100%;
+    animation: venus-rotate 30s infinite linear;
+}
+
+@keyframes venus-rotate {
+    0% {
+        transform: rotateZ(20deg) translateX(-100px) ;
+    }
+    to {
+        transform: rotateZ(380deg) translateX(-100px);
+    }
+}
+
+.earth {
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Earth-DSCOVR-20150706-IFV.jpg/610px-Earth-DSCOVR-20150706-IFV.jpg');
+    background-size: 120% 120%;
+    background-position: center center;
+    width: 42px;
+    height: 42px; 
+    animation: earth-rotate 14s infinite linear;
+    box-shadow: 0px 0px 10px #6897c7
+}
+
+@keyframes earth-rotate {
+    0% {
+        transform: rotateZ(40deg) translateX(-150px) ;
+    }
+    to {
+        transform: rotateZ(400deg) translateX(-150px);
+    }
+}
+
+.mars {
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Mars_23_aug_2003_hubble.jpg/267px-Mars_23_aug_2003_hubble.jpg');
+    background-size: 100% 100%;
+    width: 28px;
+    height: 28px; 
+    animation: mars-rotate 28s infinite linear;
+}
+
+@keyframes mars-rotate {
+    0% {
+        transform: rotateZ(0deg) translateX(-190px) ;
+    }
+    to {
+        transform: rotateZ(360deg) translateX(-190px);
+    }
+}
+
+.jupiter {
+    background: url('https://solarsystem.nasa.gov/internal_resources/3794/');
+    background-size: 150% 150%;
+    background-position: center center;
+    width: 60px;
+    height: 60px; 
+    animation: jupiter-rotate 160s infinite linear;
+}
+
+@keyframes jupiter-rotate {
+    0% {
+        transform: rotateZ(0deg) translateX(-240px) ;
+    }
+    50% {
+        background-position: 55% 40%;
+    }
+    to {
+        transform: rotateZ(360deg) translateX(-240px);
+        background-position: center center;
+    }
+}
+
+.saturn {
+    background: url('https://rwspace.ru/wp-content/uploads/2018/12/2-17.jpg');
+    background-size: 100% 100%;
+    background-position: center center;
+    width: 80px;
+    height: 60px; 
+    animation: saturn-rotate 320s infinite linear;
+}
+
+@keyframes saturn-rotate {
+    0% {
+        transform: rotateZ(60deg) translateX(-310px) ;
+    }
+    to {
+        transform: rotateZ(420deg) translateX(-310px);
+    }
+}
+
+.uranus {
+    background: url(aset/uranus.png);
+    background-size: 100% 100%;
+    width: 50px;
+    height: 50px; 
+    animation: uranus-rotate 1120s infinite linear;
+}
+
+@keyframes uranus-rotate {
+    0% {
+        transform: rotateZ(-180deg) translateX(-360px) ;
+    }
+    to {
+        transform: rotateZ(180deg) translateX(-360px);
+    }
+}
+
+.neptune {
+    background: url('aset/neptune.png');
+    background-size: 120% 120%;
+    background-position: center center;
+    width: 45px;
+    height: 45px; 
+    animation: neptune-rotate 1420s infinite linear;
+}
+
+@keyframes neptune-rotate {
+    0% {
+        transform: rotateZ(90deg) translateX(-410px);
+    }
+    to {
+        transform: rotateZ(450deg) translateX(-410px);
+    }
+}
+
+.info {
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    color: #888;
+    margin: 2% 0;
+}
+
+.planet-info {
+    padding: 5px;
+    cursor: pointer;
+    font-family: sans;
+    position: relative;
+    border-bottom: 1px solid #222;
+    transition: transform 0.3s linear;
+    box-sizing: border-box;
+}
+
+.planet-info:hover {
+    background-color: #000;
+    border: 1px solid #efefef;
+    color: #efefef;
+    transform:translateX(-40px) scale(1.1);
+    z-index: 10;
+}
+
+.planet-info .mercury,
+.planet-info .venus,
+.planet-info .earth,
+.planet-info .mars,
+.planet-info .jupiter,
+.planet-info .uranus,
+.planet-info .neptune
+{
+    animation: none;
+    width: 80px;
+    height: 80px;
+    box-shadow: none;
+    position: relative;
+    float: left;
+    shape-outside: circle(50%);
+    margin-right: 15px;
+}
+
+.planet-info .saturn {
+    animation: none;
+    width: 110px;
+    height: 80px;
+    position: relative;
+    float: left;
+}
+
+.planet-info h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+
+.planet-info p {
+    margin: 0;
+    padding: 0;
+    font-size: 75%;
+}
+
+.additional {
+    background: rgba(255, 255, 255, 0.3);
+    color: #fefefe;
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-height: 400px;
+    width: 0;
+    transition: width 0.3s linear;
+    z-index: 15;
+}
+
+.additional.show {
+    width: 40%;
+    font-family: sans;
+    margin: 50px;
+    padding: 30px 50px;
+    text-align: justify;
+    text-indent: 30px
+}
+
+.close {
+    visibility: hidden;
+}
+
+.close.show {
+    visibility: visible;
+    position: absolute;
+    display: inline-block;
+    text-indent: 0;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    transition: transform 0.3s linear;
+}
+
+.close:hover {
+    transform: scale(1.5)
+}

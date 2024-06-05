@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mars</title>
+  <link rel="stylesheet" href="planetin.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="home.html" class="navbar-item">HOME</a>
+        </div>
+        <div class="navbar-right">
+          <a href="planet.html" class="navbar-item">PLANET</a>
+          <a href="Revolusi.html" class="navbar-item">REVOLUSI</a>
+          <a href="Rotasi.html" class="navbar-item">ROTASI</a>
+          <a href="funfact.html" class="navbar-item">FUN FACT</a>
+          <a href="Kuis.html" class="navbar-item">QUIZ</a>
+          <a href="#" class="navbar-item">TENTANG</a>
+        </div>
+    </nav>
+</header>
+  <div class="frame">
+    <!-- Pindahkan elemen renderer ke dalam div dengan kelas "frame" -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+      // Inisialisasi scene, camera, dan renderer
+      var scene = new THREE.Scene();
+      var camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 0.8, 300);
+
+      // Renderer dibuat di dalam div dengan kelas "frame"
+      var renderer = new THREE.WebGLRenderer();
+      renderer.setSize(window.innerWidth * 0.5 , 350); // Sesuaikan ukuran renderer dengan ukuran frame
+      document.querySelector('.frame').appendChild(renderer.domElement); // Pindahkan renderer ke dalam div dengan kelas "frame"
+
+      // Tambahkan kode untuk membuat bumi 3D di sini
+      var geometry = new THREE.SphereGeometry(5, 32, 32);
+      var material = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Solarsystemscope_texture_2k_mars.jpg/1200px-Solarsystemscope_texture_2k_mars.jpg?20201026210255') });
+      var sphere = new THREE.Mesh(geometry, material);
+      scene.add(sphere);
+
+      // Tambahkan animasi rotasi bumi
+      function animate() {
+        requestAnimationFrame(animate);
+        sphere.rotation.y += 0.01;
+        renderer.render(scene, camera);
+      }
+      animate();
+
+      // Atur posisi kamera
+      camera.position.z = 20;
+    </script>
+
+  </div>
+  <div class="frame2">
+    <p class="title">MARS</p>
+    <div class="subtitle">
+        <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Mars adalah planet terdekat keempat dari Matahari. Planet ini sering dijuluki sebagai "planet merah" karena tampak dari jauh berwarna kemerah-kemerahan. Ini disebabkan oleh keberadaan besi oksida di permukaan planet Mars. Planet ini memiliki 2 buah satelit, yaitu Fobos dan Deimos.</p>
+        <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Inti Mars, yang jari-jarinya diperkirakan sebesar 1.480 km, terdiri dari besi dan 14–17% sulfur. Inti besi sulfida ini cair. Lapisan di atas inti Mars adalah mantel silikat yang membentuk banyak objek tektonik dan vulkanik di Mars, tetapi saat ini mantel tersebut sudah tidak aktif. Di atas lapisan mantel adalah kerak, yang ketebalan rata-ratanya sekitar 50 km, dan ketebalan maksimumnya 125 km.</p>
+    </div>
+  </div>
+</body>
+</html>

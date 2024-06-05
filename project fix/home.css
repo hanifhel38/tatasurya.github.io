@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom right, #000, #000, #000);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+header {
+    width: 100%;
+    background-color: #000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    color: white;
+}
+
+.navbar-item {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    margin-right: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.content {
+    color: #fff;
+    margin-top: 50px;
+}
+.top-content{
+    margin-bottom: 0;
+}
+.title {
+    margin-bottom: 0;
+    color: #fff;
+    font-size: 3em;
+}
+.subtitle{
+    margin-top: 0;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.subtitle p{
+    margin-top: 0;
+    font-family: sans-serif;
+    color: #fff;
+    font-size: 1.8em;
+}
+.bottom-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.content-item {
+    background-color:#D1D1D1;
+    padding: 10px;
+    margin: 25px;
+    border-radius: 8px;
+    flex: 1; /* Setiap content-item memiliki lebar yang sama */
+    max-width: 200px; /* Optional: Atur lebar maksimum sesuai kebutuhan */
+    min-height: 175px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+img{
+    width:175px;
+    height:175px;
+}
+h2 {
+    font-size: 1.5em;
+}
+
+p {
+    font-size: 1em;
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.content-item:hover {
+    background-color: #8E8FFA;
+    transform:scale(1.1) ;
+    transition: 0.5s;
+    
+  }
+.navbar-item:hover{
+    background-color: #615EFC;
+    border-radius: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-left {
+        margin-bottom: 10px;
+    }
+
+    .navbar-right {
+        margin-top: 10px;
+    }
+
+    .navbar-item {
+        margin: 5px 0;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+}
+a {
+    text-decoration: none;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Neptunus</title>
+  <link rel="stylesheet" href="planetin.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="home.html" class="navbar-item">HOME</a>
+        </div>
+        <div class="navbar-right">
+          <a href="planet.html" class="navbar-item">PLANET</a>
+          <a href="Revolusi.html" class="navbar-item">REVOLUSI</a>
+          <a href="Rotasi.html" class="navbar-item">ROTASI</a>
+          <a href="funfact.html" class="navbar-item">FUN FACT</a>
+          <a href="Kuis.html" class="navbar-item">QUIZ</a>
+          <a href="#" class="navbar-item">TENTANG</a>
+        </div>
+    </nav>
+</header>
+  <div class="frame">
+    <!-- Pindahkan elemen renderer ke dalam div dengan kelas "frame" -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+      // Inisialisasi scene, camera, dan renderer
+      var scene = new THREE.Scene();
+      var camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 0.8, 300);
+
+      // Renderer dibuat di dalam div dengan kelas "frame"
+      var renderer = new THREE.WebGLRenderer();
+      renderer.setSize(window.innerWidth * 0.5 , 350); // Sesuaikan ukuran renderer dengan ukuran frame
+      document.querySelector('.frame').appendChild(renderer.domElement); // Pindahkan renderer ke dalam div dengan kelas "frame"
+
+      // Tambahkan kode untuk membuat bumi 3D di sini
+      var geometry = new THREE.SphereGeometry(5, 32, 32);
+      var material = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('https://upload.wikimedia.org/wikipedia/commons/1/1e/Solarsystemscope_texture_2k_neptune.jpg') });
+      var sphere = new THREE.Mesh(geometry, material);
+      scene.add(sphere);
+
+      // Tambahkan animasi rotasi bumi
+      function animate() {
+        requestAnimationFrame(animate);
+        sphere.rotation.y += 0.01;
+        renderer.render(scene, camera);
+      }
+      animate();
+
+      // Atur posisi kamera
+      camera.position.z = 20;
+    </script>
+
+  </div>
+  <div class="frame2">
+    <p class="title">NEPTUNUS</p>
+    <div class="subtitle">
+        <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Neptunus merupakan planet terjauh kedelapan dari Matahari. Neptunus merupakan planet terbesar keempat berdasarkan diameter (49.530 km) dan terbesar ketiga berdasarkan massa. Massa Neptunus tercatat 17 kali lebih besar daripada Bumi, dan sedikit lebih kecil daripada Uranus.</p>
+        <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Komposisi penyusun planet ini mirip dengan Uranus, dan komposisi keduanya berbeda dari raksasa gas Jupiter dan Saturnus. Atmosfer Neptunus mengandung hidrogen, helium, hidrokarbon, kemungkinan nitrogen, dan kandungan "es" yang besar seperti es air, amonia, dan metana. Astronom kadang-kadang mengategorikan Uranus dan Neptunus sebagai "raksasa es" untuk menekankan perbedaannya. Seperti Uranus, interior Neptunus terdiri dari es dan batu. Metana di wilayah terluar planet merupakan salah satu penyebab kenampakan kebiruan Neptunus.</p>
+    </div>
+  </div>
+</body>
+</html>
